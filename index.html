@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>R９年度 ふるさと学習（総合的な学習の時間） 全体計画・指導構想図</title>
+    <title>ふるさと学習（総合的な学習の時間）全体計画</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
@@ -75,6 +75,10 @@
 
         /* 印刷用スタイル最適化 */
         @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
             .no-print {
                 display: none !important;
             }
@@ -129,7 +133,7 @@
             <div class="text-center mb-6">
                 <div class="inline-flex items-center gap-2 group cursor-pointer select-none" onclick="downloadA3PDF()" title="クリックしてA3用紙（縦）サイズのPDFをダウンロード">
                     <h1 class="text-2xl md:text-3xl font-bold tracking-wider text-slate-800 group-hover:text-indigo-600 transition-colors border-b-2 border-transparent group-hover:border-indigo-400 px-2 py-1" id="doc_title">
-                        R９年度 ふるさと学習（総合的な学習の時間） 全体計画
+                        R９年度 ふるさと学習（総合的な学習の時間） 全体計画（案）
                     </h1>
                     <span class="no-print inline-flex items-center text-xs font-medium text-indigo-600 bg-indigo-50 border border-indigo-200 px-2.5 py-1 rounded-full shadow-xs group-hover:bg-indigo-600 group-hover:text-white transition-all">
                         <i class="fa-solid fa-file-pdf mr-1 text-xs"></i>A3 PDF保存
@@ -138,71 +142,76 @@
             </div>
 
             <!-- 上段：3カラム構成 (中央をやや広く、左右を均等配分: 1fr : 1.35fr : 1fr) -->
-            <div class="grid grid-cols-1 md:grid-cols-[1fr_1.35fr_1fr] gap-3.5 mb-3">
-                
-                <!-- 左列：根拠法令 / 各種連携・発信 -->
-                <div class="flex flex-col gap-3">
-                    <!-- 関連法規 -->
-                    <div class="border border-slate-400 bg-white rounded-lg overflow-hidden shadow-sm flex flex-col min-h-[96px]">
-                        <div class="bg-slate-100 border-b border-slate-400 px-3 py-1.5 text-center font-bold text-xs md:text-sm text-slate-800 flex items-center justify-center">
-                            <div contenteditable="true" data-key="title_legal_basis">関連法規</div>
-                        </div>
-                        <div class="flex-1 flex items-center justify-center p-2">
-                            <div contenteditable="true" data-key="plan_legal_basis" class="text-xs leading-relaxed text-slate-700 whitespace-pre-wrap font-normal text-left w-full px-3">・日本国憲法
+            <div class="relative mb-3">
+                <!-- 3ブロック連結用の太いスカイブルー帯（上段・下段） -->
+                <div class="hidden md:block absolute left-16 right-16 top-[56px] -translate-y-1/2 h-7 bg-[#9dc4ea] z-0 pointer-events-none rounded-xs"></div>
+                <div class="hidden md:block absolute left-16 right-16 bottom-[92px] translate-y-1/2 h-7 bg-[#9dc4ea] z-0 pointer-events-none rounded-xs"></div>
+
+                <div class="relative z-10 grid grid-cols-1 md:grid-cols-[1fr_1.35fr_1fr] gap-5">
+                    
+                    <!-- 左列：根拠法令 / 各種連携・発信 -->
+                    <div class="flex flex-col gap-3">
+                        <!-- 関連法規 -->
+                        <div class="border border-slate-400 bg-white rounded-lg overflow-hidden shadow-sm flex flex-col min-h-[96px]">
+                            <div class="bg-slate-100 border-b border-slate-400 px-3 py-1.5 text-center font-bold text-xs md:text-sm text-slate-800 flex items-center justify-center">
+                                <div contenteditable="true" data-key="title_legal_basis">関連法規</div>
+                            </div>
+                            <div class="flex-1 flex items-center justify-center p-2">
+                                <div contenteditable="true" data-key="plan_legal_basis" class="text-xs leading-relaxed text-slate-700 whitespace-pre-wrap font-normal text-left w-full px-3">・日本国憲法
 ・教育基本法
 ・学校教育法
 ・学習指導要領 等</div>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- 家庭・地域連携 / 情報発信 (セル分割) -->
-                    <div class="border border-slate-400 bg-white rounded-lg overflow-hidden shadow-sm flex-1 flex flex-col">
-                        <!-- 家庭との連携 -->
-                        <div class="bg-slate-100 border-b border-slate-400 px-3 py-1 text-center font-bold text-xs text-slate-800 flex items-center justify-center">
-                            <div contenteditable="true" data-key="title_collab_home">家庭との連携</div>
-                        </div>
-                        <div class="flex-1 flex items-center justify-center p-2 border-b border-slate-300">
-                            <div contenteditable="true" data-key="plan_collab_home" class="text-xs leading-relaxed text-slate-700 whitespace-pre-wrap text-left w-full px-3">・学校・学年だより
+                        <!-- 家庭・地域連携 / 情報発信 (セル分割) -->
+                        <div class="border border-slate-400 bg-white rounded-lg overflow-hidden shadow-sm flex-1 flex flex-col">
+                            <!-- 家庭との連携 -->
+                            <div class="bg-slate-100 border-b border-slate-400 px-3 py-1 text-center font-bold text-xs text-slate-800 flex items-center justify-center">
+                                <div contenteditable="true" data-key="title_collab_home">家庭との連携</div>
+                            </div>
+                            <div class="flex-1 flex items-center justify-center p-2 border-b border-slate-300">
+                                <div contenteditable="true" data-key="plan_collab_home" class="text-xs leading-relaxed text-slate-700 whitespace-pre-wrap text-left w-full px-3">・学校・学年だより
 ・PTA活動 等</div>
-                        </div>
+                            </div>
 
-                        <!-- 地域との連携 -->
-                        <div class="bg-slate-100 border-b border-slate-400 px-3 py-1 text-center font-bold text-xs text-slate-800 flex items-center justify-center">
-                            <div contenteditable="true" data-key="title_collab_community">地域との連携</div>
-                        </div>
-                        <div class="flex-1 flex items-center justify-center p-2 border-b border-slate-300">
-                            <div contenteditable="true" data-key="plan_collab_community" class="text-xs leading-relaxed text-slate-700 whitespace-pre-wrap text-left w-full px-3">・地域の方々
+                            <!-- 地域との連携 -->
+                            <div class="bg-slate-100 border-b border-slate-400 px-3 py-1 text-center font-bold text-xs text-slate-800 flex items-center justify-center">
+                                <div contenteditable="true" data-key="title_collab_community">地域との連携</div>
+                            </div>
+                            <div class="flex-1 flex items-center justify-center p-2 border-b border-slate-300">
+                                <div contenteditable="true" data-key="plan_collab_community" class="text-xs leading-relaxed text-slate-700 whitespace-pre-wrap text-left w-full px-3">・地域の方々
 ・天川村の施設 等</div>
-                        </div>
+                            </div>
 
-                        <!-- 情報発信 -->
-                        <div class="bg-slate-100 border-b border-slate-400 px-3 py-1 text-center font-bold text-xs text-slate-800 flex items-center justify-center">
-                            <div contenteditable="true" data-key="title_collab_info">情報発信</div>
-                        </div>
-                        <div class="flex-1 flex items-center justify-center p-2">
-                            <div contenteditable="true" data-key="plan_collab_info" class="text-xs leading-relaxed text-slate-700 whitespace-pre-wrap text-left w-full px-3">・PTA総会、学校HP、学級懇談会、各通信 等</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 中央列：学校教育目標 / 目指す児童・生徒像 -->
-                <div class="flex flex-col">
-                    <!-- 学校教育目標 -->
-                    <div class="border border-slate-400 bg-white rounded-lg overflow-hidden shadow-sm flex flex-col min-h-[96px]">
-                        <div class="bg-slate-100 border-b border-slate-400 px-3 py-1.5 text-center font-bold text-xs md:text-sm text-slate-800 flex items-center justify-center">
-                            学校教育目標
-                        </div>
-                        <div class="flex-1 flex items-center justify-center p-3">
-                            <div contenteditable="true" data-key="plan_school_goal" class="text-center text-xs md:text-sm font-medium text-slate-800 leading-relaxed whitespace-pre-wrap w-full">ふるさとを愛し、自らの未来を主体的に切り拓く児童生徒の育成</div>
+                            <!-- 情報発信 -->
+                            <div class="bg-slate-100 border-b border-slate-400 px-3 py-1 text-center font-bold text-xs text-slate-800 flex items-center justify-center">
+                                <div contenteditable="true" data-key="title_collab_info">情報発信</div>
+                            </div>
+                            <div class="flex-1 flex items-center justify-center p-2">
+                                <div contenteditable="true" data-key="plan_collab_info" class="text-xs leading-relaxed text-slate-700 whitespace-pre-wrap text-left w-full px-3">・PTA総会、学校HP、学級懇談会、各通信 等</div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- 矢印 (教育目標 -> 児童像) -->
-                    <div class="flex justify-center my-1.5 text-blue-400">
-                        <svg class="w-6 h-6 fill-blue-200 stroke-slate-700 stroke-[1.5]" viewBox="0 0 24 24">
-                            <path d="M12 21l-8-9h5V3h6v9h5z" />
-                        </svg>
-                    </div>
+                    <!-- 中央列：学校教育目標 / 目指す児童・生徒像 -->
+                    <div class="flex flex-col">
+                        <!-- 学校教育目標 -->
+                        <div class="border border-slate-400 bg-white rounded-lg overflow-hidden shadow-sm flex flex-col min-h-[96px]">
+                            <div class="bg-slate-100 border-b border-slate-400 px-3 py-1.5 text-center font-bold text-xs md:text-sm text-slate-800 flex items-center justify-center">
+                                学校教育目標
+                            </div>
+                            <div class="flex-1 flex items-center justify-center p-3">
+                                <div contenteditable="true" data-key="plan_school_goal" class="text-center text-xs md:text-sm font-medium text-slate-800 leading-relaxed whitespace-pre-wrap w-full">ふるさとを愛し、自らの未来を主体的に切り拓く児童生徒の育成</div>
+                            </div>
+                        </div>
+
+                        <!-- 矢印 (教育目標 -> 児童像) -->
+                        <div class="flex justify-center my-1.5">
+                            <svg class="w-24 md:w-28 h-6 md:h-7 fill-[#9dc4ea]" viewBox="0 0 100 28">
+                                <path d="M 22 0 L 78 0 L 78 14 L 100 14 L 50 28 L 0 14 L 22 14 Z" />
+                            </svg>
+                        </div>
 
                     <!-- 目指す児童・生徒像 -->
                     <div class="border border-slate-400 bg-white rounded-lg overflow-hidden shadow-sm flex-1 flex flex-col">
@@ -251,11 +260,12 @@
                 </div>
 
             </div>
+            </div>
 
             <!-- 下向き矢印 (上段 -> 総合学習目標) -->
-            <div class="flex justify-center my-2 text-indigo-400">
-                <svg class="w-8 h-7 fill-blue-200 stroke-slate-700 stroke-[1.5]" viewBox="0 0 24 24">
-                    <path d="M12 21l-8-9h5V3h6v9h5z" />
+            <div class="flex justify-center my-2">
+                <svg class="w-28 md:w-36 h-7 md:h-8 fill-[#9dc4ea]" viewBox="0 0 100 32">
+                    <path d="M 20 0 L 80 0 L 80 16 L 100 16 L 50 32 L 0 16 L 20 16 Z" />
                 </svg>
             </div>
 
@@ -274,9 +284,9 @@
             </div>
 
             <!-- Down Arrow 2 -->
-            <div class="flex justify-center my-2 text-indigo-400">
-                <svg class="w-10 h-8 fill-blue-200 stroke-slate-800 stroke-[1.5]" viewBox="0 0 24 24">
-                    <path d="M12 21l-8-9h5V3h6v9h5z" />
+            <div class="flex justify-center my-2">
+                <svg class="w-28 md:w-36 h-7 md:h-8 fill-[#9dc4ea]" viewBox="0 0 100 32">
+                    <path d="M 20 0 L 80 0 L 80 16 L 100 16 L 50 32 L 0 16 L 20 16 Z" />
                 </svg>
             </div>
 
