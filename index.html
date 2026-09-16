@@ -531,7 +531,7 @@
                     </h3>
                     <div contenteditable="true" data-key="box6_content" class="text-xs md:text-sm leading-relaxed space-y-1 text-slate-700 whitespace-pre-wrap">・社会福祉協議会
 ・地域の行事
-・町役場
+・村役場
 ・村の交流施設 など</div>
                 </div>
 
@@ -676,7 +676,7 @@
                                 newData['box2_content'] = '・全校指導体制を組織する。\n・地域の教育資源をデータ化するとともに、日常的な関わりを行う。\n・地域コーディネーター、地域ボランティアを活用する。';
                             }
                             if (newData['box6_content']) {
-                                newData['box6_content'] = '・社会福祉協議会\n・地域の行事\n・町役場\n・村の交流施設 など';
+                                newData['box6_content'] = '・社会福祉協議会\n・地域の行事\n・村役場\n・村の交流施設 など';
                             }
                             if (newData['box4_content']) {
                                 newData['box4_content'] = '・指導と評価の一体化を充実する。\n・観点別学習状況を把握するための評価規準を設定する。\n・キャリアパスポートを活用した評価の充実を図る。';
@@ -714,7 +714,7 @@
                         const el = document.querySelector(`[data-key="${key}"]`);
                         if (el) {
                             let text = (data[key] || '')
-                                .replace(/下市町/g, '天川村')
+                                .replace(/下市村/g, '天川村')
                                 .replace(/下市/g, '天川村')
                                 .replace(/KITO/g, '村の交流施設');
                             if (key === 'plan_collab_home' && !text.includes('等')) {
@@ -736,7 +736,7 @@
                                 text = '・全校指導体制を組織する。\n・地域の教育資源をデータ化するとともに、日常的な関わりを行う。\n・地域コーディネーター、地域ボランティアを活用する。';
                             }
                             if (key === 'box6_content' && (text.includes('天川幼稚園') || text.includes('学校サポーター') || text.includes('こども園') || text.includes('にぎわい創出協議会'))) {
-                                text = '・社会福祉協議会\n・地域の行事\n・町役場\n・村の交流施設 など';
+                                text = '・社会福祉協議会\n・地域の行事\n・村役場\n・村の交流施設 など';
                             }
                             if (key === 'box4_content' && (text.includes('ポートフォリオ') || text.includes('個人内評価') || text.includes('授業分析'))) {
                                 text = '・指導と評価の一体化を充実する。\n・観点別学習状況を把握するための評価規準を設定する。\n・キャリアパスポートを活用した評価の充実を図る。';
