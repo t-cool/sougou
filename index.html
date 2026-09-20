@@ -294,38 +294,38 @@
                             <col class="w-10">
                             <col class="w-8">
                             <col class="w-[112px]">
-                            <!-- 1~2年(In): 25% (各12.5%) -->
+                            <!-- 1~2年: 25% (各12.5%) -->
                             <col class="w-[12.5%]">
                             <col class="w-[12.5%]">
-                            <!-- 3~4年(About): 25% (各12.5%) -->
+                            <!-- 3~4年: 25% (各12.5%) -->
                             <col class="w-[12.5%]">
                             <col class="w-[12.5%]">
-                            <!-- 5~6年(Pre-For): 25% (各12.5%) -->
+                            <!-- 5~6年: 25% (各12.5%) -->
                             <col class="w-[12.5%]">
                             <col class="w-[12.5%]">
-                            <!-- 7~9(For): 25% (各8.333%) -->
+                            <!-- 7~9年: 25% (各8.333%) -->
                             <col class="w-[8.333%]">
                             <col class="w-[8.333%]">
                             <col class="w-[8.334%]">
                         </colgroup>
                         <thead>
-                            <!-- 探究の視点 (1~2年(In) / 3~4年(About) / 5~6年(Pre-For) / 7~9(For)) -->
+                            <!-- 探究の視点 (1~2年 / 3~4年 / 5~6年 / 7~9年) -->
                             <tr class="bg-slate-100 text-slate-700">
                                 <th rowspan="2" class="border border-slate-400 p-2 w-10 bg-slate-100"></th>
                                 <th colspan="2" class="border border-slate-400 p-2 text-center font-bold text-xs text-slate-800 bg-slate-100 w-36">
                                     <div contenteditable="true" data-key="title_stage">探究の視点</div>
                                 </th>
                                 <th colspan="2" class="border border-slate-400 p-2 text-center font-bold text-xs md:text-sm text-slate-800 bg-slate-100 w-1/4">
-                                    <div contenteditable="true" data-key="stage_in">1~2年(In)</div>
+                                    <div contenteditable="true" data-key="stage_in">1~2年</div>
                                 </th>
                                 <th colspan="2" class="border border-slate-400 p-2 text-center font-bold text-xs md:text-sm text-slate-800 bg-slate-100 w-1/4">
-                                    <div contenteditable="true" data-key="stage_about">3~4年(About)</div>
+                                    <div contenteditable="true" data-key="stage_about">3~4年</div>
                                 </th>
                                 <th colspan="2" class="border border-slate-400 p-2 text-center font-bold text-xs md:text-sm text-slate-800 bg-slate-100 w-1/4">
-                                    <div contenteditable="true" data-key="stage_pre_for">5~6年(Pre-For)</div>
+                                    <div contenteditable="true" data-key="stage_pre_for">5~6年</div>
                                 </th>
                                 <th colspan="3" class="border border-slate-400 p-2 text-center font-bold text-xs md:text-sm text-slate-800 bg-slate-100 w-1/4">
-                                    <div contenteditable="true" data-key="stage_for">7~9(For)</div>
+                                    <div contenteditable="true" data-key="stage_for">7~9年</div>
                                 </th>
                             </tr>
                             <!-- 学年行 -->
@@ -727,10 +727,10 @@
                             }
 
                             // 4区分ラベルの更新
-                            newData['stage_in'] = '1~2年(In)';
-                            newData['stage_about'] = '3~4年(About)';
-                            newData['stage_pre_for'] = '5~6年(Pre-For)';
-                            newData['stage_for'] = '7~9(For)';
+                            newData['stage_in'] = '1~2年';
+                            newData['stage_about'] = '3~4年';
+                            newData['stage_pre_for'] = '5~6年';
+                            newData['stage_for'] = '7~9年';
 
                             // 知識及び技能（4区分設定：文章の長さを均等（約126文字）に調整）
                             newData['k_1_2'] = '天川村の身近な自然や人・暮らしに触れる豊かな体験活動を通して、五感や簡単な思考ツール（絵や図など）を活用した観察・整理の仕方を身につけるとともに、地域の面白さや不思議さに気づき、自ら探究することの楽しさやよさを体感的に理解する。';
@@ -812,16 +812,16 @@
                                 text = '・PTA総会、学校HP、学級懇談会、各通信 等';
                             }
                             if (key === 'stage_in') {
-                                text = '1~2年(In)';
+                                text = '1~2年';
                             }
                             if (key === 'stage_about') {
-                                text = '3~4年(About)';
+                                text = '3~4年';
                             }
                             if (key === 'stage_pre_for') {
-                                text = '5~6年(Pre-For)';
+                                text = '5~6年';
                             }
                             if (key === 'stage_for') {
-                                text = '7~9(For)';
+                                text = '7~9年';
                             }
                             if (key === 'k_1_2' && (!text || text.length < 115 || text.includes('自分自身と身近な人々'))) {
                                 text = '天川村の身近な自然や人・暮らしに触れる豊かな体験活動を通して、五感や簡単な思考ツール（絵や図など）を活用した観察・整理の仕方を身につけるとともに、地域の面白さや不思議さに気づき、自ら探究することの楽しさやよさを体感的に理解する。';
