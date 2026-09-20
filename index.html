@@ -215,9 +215,9 @@
                             目指す児童・生徒像
                         </div>
                         <div class="flex-1 flex items-center justify-center p-3">
-                            <div contenteditable="true" data-key="plan_student_vision" class="text-sm leading-relaxed text-slate-700 whitespace-pre-wrap text-left w-full px-4">・自ら学び、考え、行動する子（知・主体性）
-・自分と人を思いやり、ふるさと天川を愛する子（徳・郷土愛）
-・心身ともにたくましく、夢に向かって生きぬく子（体・未来）</div>
+                            <div contenteditable="true" data-key="plan_student_vision" class="text-sm leading-relaxed text-slate-700 whitespace-pre-wrap text-left w-full px-4">・自ら学び、考え、行動する子（知）
+・自分と人を思いやり、ふるさと天川を愛する子（徳）
+・心身ともにたくましく、夢に向かって生きぬく子（体）</div>
                         </div>
                     </div>
                 </div>
@@ -723,7 +723,7 @@
                                 newData['plan_student_status'] = `(実態)\n・素直で郷土愛にあふれ、温和で明るい。\n・固定的な人間関係や比較対象の少なさから、自己の強みや弱みを自覚しにくい。\n・互いに阿吽の呼吸で通じるため、筋道を立てて考えを伝える意識が希薄である。\n\n(課題)\n・自ら状況を捉え、主体的に判断・行動すること。\n・固定化した関係にとどまらず、多様な他者の視点を認めて広げる。`;
                             }
                             if (newData['plan_student_vision']) {
-                                newData['plan_student_vision'] = '・自ら学び、考え、行動する子（知・主体性）\n・自分と人を思いやり、ふるさと天川を愛する子（徳・郷土愛）\n・心身ともにたくましく、夢に向かって生きぬく子（体・未来）';
+                                newData['plan_student_vision'] = '・自ら学び、考え、行動する子（知）\n・自分と人を思いやり、ふるさと天川を愛する子（徳）\n・心身ともにたくましく、夢に向かって生きぬく子（体）';
                             }
 
                             // 4区分ラベルの更新
@@ -934,8 +934,8 @@
                             if (key === 'plan_student_status' && (text.includes('自己の強みを自覚しにくい') || text.includes('論理的に考えを伝える意識') || text.includes('主体的に判断・行動する。') || text.includes('明るく元気、素直') || text.includes('自信を持つことが苦手'))) {
                                 text = `(実態)\n・素直で郷土愛にあふれ、温和で明るい。\n・固定的な人間関係や比較対象の少なさから、自己の強みや弱みを自覚しにくい。\n・互いに阿吽の呼吸で通じるため、筋道を立てて考えを伝える意識が希薄である。\n\n(課題)\n・自ら状況を捉え、主体的に判断・行動すること。\n・固定化した関係にとどまらず、多様な他者の視点を認めて広げる。`;
                             }
-                            if (key === 'plan_student_vision' && (text.includes('自分で考え、正しい判断ができる子') || text.includes('夢と希望をもち続ける子') || !text.includes('知・主体性'))) {
-                                text = '・自ら学び、考え、行動する子（知・主体性）\n・自分と人を思いやり、ふるさと天川を愛する子（徳・郷土愛）\n・心身ともにたくましく、夢に向かって生きぬく子（体・未来）';
+                            if (key === 'plan_student_vision' && (text.includes('自分で考え、正しい判断ができる子') || text.includes('夢と希望をもち続ける子') || text.includes('知・主体性') || !text.includes('（知）'))) {
+                                text = '・自ら学び、考え、行動する子（知）\n・自分と人を思いやり、ふるさと天川を愛する子（徳）\n・心身ともにたくましく、夢に向かって生きぬく子（体）';
                             }
                             el.innerText = text.trim();
                         }
