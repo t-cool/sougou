@@ -526,9 +526,9 @@
                     <h3 class="font-bold border-b border-slate-300 pb-1.5 mb-2 text-slate-800 text-sm md:text-base">
                         <span contenteditable="true" data-key="box2_title">【指導体制】</span>
                     </h3>
-                    <div contenteditable="true" data-key="box2_content" class="text-xs md:text-sm leading-relaxed space-y-1 text-slate-700 whitespace-pre-wrap">・全校指導体制を組織する。
+                    <div contenteditable="true" data-key="box2_content" class="text-xs md:text-sm leading-relaxed space-y-1 text-slate-700 whitespace-pre-wrap">・帯活動を通して、全校指導体制を組織する。
 ・地域の教育資源をデータ化するとともに、日常的な関わりを行う。
-・地域コーディネーター、地域ボランティアを活用する。</div>
+・ふるさと人材バンクを活用する。</div>
                 </div>
 
                 <!-- 指導方法 -->
@@ -711,7 +711,7 @@
                                 newData['plan_collab_info'] = '・PTA総会、学校HP、学級懇談会、各通信 等';
                             }
                             if (newData['box2_content']) {
-                                newData['box2_content'] = '・全校指導体制を組織する。\n・地域の教育資源をデータ化するとともに、日常的な関わりを行う。\n・地域コーディネーター、地域ボランティアを活用する。';
+                                newData['box2_content'] = '・帯活動を通して、全校指導体制を組織する。\n・地域の教育資源をデータ化するとともに、日常的な関わりを行う。\n・ふるさと人材バンクを活用する。';
                             }
                             if (newData['box6_content']) {
                                 newData['box6_content'] = '・社会福祉協議会\n・地域の行事\n・村役場\n・村の交流施設 など';
@@ -922,8 +922,8 @@
                             if (key === 'plan_school_goal' && text.includes('社会を切り拓く力を育む')) {
                                 text = 'ふるさとを愛し、自らの未来を主体的に切り拓く児童生徒の育成';
                             }
-                            if (key === 'box2_content' && text.includes('メディアセンター')) {
-                                text = '・全校指導体制を組織する。\n・地域の教育資源をデータ化するとともに、日常的な関わりを行う。\n・地域コーディネーター、地域ボランティアを活用する。';
+                            if (key === 'box2_content' && (text.includes('メディアセンター') || !text.includes('帯活動') || !text.includes('ふるさと人材バンク'))) {
+                                text = '・帯活動を通して、全校指導体制を組織する。\n・地域の教育資源をデータ化するとともに、日常的な関わりを行う。\n・ふるさと人材バンクを活用する。';
                             }
                             if (key === 'box6_content' && (text.includes('天川幼稚園') || text.includes('学校サポーター') || text.includes('こども園') || text.includes('にぎわい創出協議会'))) {
                                 text = '・社会福祉協議会\n・地域の行事\n・村役場\n・村の交流施設 など';
