@@ -114,6 +114,10 @@
         img {
             display: inline-block !important;
         }
+
+        .zoomed-out-container {
+            overflow-x: hidden !important;
+        }
     </style>
 </head>
 <body class="p-2 md:p-6 min-h-screen pb-16">
@@ -978,10 +982,84 @@
             textarea.style.height = (textarea.scrollHeight) + 'px';
         }
 
+
+        // モバイル用ズーム制御
+        let isZoomedOut = window.innerWidth < 1200;
+
+        function applyZoom() {
+            const printCard = document.querySelector('.print-card');
+            const printContainer = document.querySelector('.print-container');
+            if (!printCard || !printContainer) return;
+
+            if (window.innerWidth < 1200) {
+                if (isZoomedOut) {
+                    // paddingは親要素の設定等に応じて適宜調整
+                    const padding = window.innerWidth >= 768 ? 48 : 16;
+                    const containerWidth = window.innerWidth - padding;
+                    const scale = containerWidth / 1200;
+
+                    printCard.style.transform = `scale(${scale})`;
+                    printCard.style.transformOrigin = 'top left';
+
+                    // offsetHeightは未スケール時の高さ。スケール後の差分をマイナスマージンで相殺
+                    const scaledHeight = printCard.offsetHeight * scale;
+                    printCard.style.marginBottom = `-${printCard.offsetHeight - scaledHeight}px`;
+                    printCard.style.cursor = 'zoom-in';
+
+                    printContainer.classList.add('zoomed-out-container');
+                } else {
+                    printCard.style.transform = 'none';
+                    printCard.style.marginBottom = '0';
+                    printCard.style.cursor = 'zoom-out';
+
+                    printContainer.classList.remove('zoomed-out-container');
+                }
+            } else {
+                printCard.style.transform = 'none';
+                printCard.style.marginBottom = '0';
+                printCard.style.cursor = 'default';
+                printContainer.classList.remove('zoomed-out-container');
+            }
+        }
         // 初期化リスナー
         window.addEventListener('DOMContentLoaded', () => {
             loadSection1Data();
             loadSection2Data();
+
+            // リサイズ・クリックでのズーム制御
+            window.addEventListener('resize', () => {
+                if (window.innerWidth >= 1200) {
+                    isZoomedOut = false;
+                } else if (document.querySelector('.print-card')?.style.cursor === 'default') {
+                    isZoomedOut = true;
+                }
+                applyZoom();
+            });
+
+            const printCardEl = document.querySelector('.print-card');
+            if (printCardEl) {
+                printCardEl.addEventListener('click', (e) => {
+                    if (window.innerWidth < 1200) {
+                        // 編集エリアやボタンを押した時はズームアウトしない
+                        if (!isZoomedOut && (e.target.isContentEditable || e.target.closest('button, [onclick], textarea, input, select'))) {
+                            return;
+                        }
+
+                        isZoomedOut = !isZoomedOut;
+                        applyZoom();
+                    }
+                });
+
+                // 初回描画時に高さを正しく取得するため、少し待ってから実行
+                setTimeout(applyZoom, 100);
+
+                // コンテンツの高さが変わった場合に対応するためResizeObserverを利用
+                if (window.ResizeObserver) {
+                    const ro = new ResizeObserver(() => applyZoom());
+                    ro.observe(printCardEl);
+                }
+            }
+
 
             // テキストエリアの入力時リスナー
             document.querySelectorAll('textarea').forEach(textarea => {
