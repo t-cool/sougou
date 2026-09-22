@@ -15,7 +15,7 @@
     <!-- html2canvas & jsPDF for A3 PDF Export -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    
+
     <style>
         @page {
             size: A3 portrait;
@@ -127,7 +127,7 @@
                 <span>目次ポータル</span>
             </a>
             <span class="text-slate-300">|</span>
-            <div class="text-sm font-bold text-slate-700">
+            <div class="text-xs md:text-sm font-bold text-slate-700">
                 ふるさと学習 全体計画・指導構想図
             </div>
         </div>
@@ -143,17 +143,17 @@
         </div>
     </header>
 
-    <div class="max-w-[1400px] mx-auto print-container space-y-10 overflow-x-auto">
+    <div class="max-w-[1400px] mx-auto print-container space-y-10">
 
         <!-- ======================================================== -->
         <!-- 全体計画・指導構想図                                      -->
         <!-- ======================================================== -->
-        <section class="bg-white p-10 rounded-2xl shadow-md border border-slate-300 print-card min-w-[1200px]">
-            
+        <section class="bg-white p-6 md:p-10 rounded-2xl shadow-md border border-slate-300 print-card">
+
             <!-- Document Title (クリックでA3 PDFダウンロード) -->
             <div class="text-center mb-6">
                 <div class="inline-flex items-center gap-2 group cursor-pointer select-none" onclick="downloadA3PDF()" title="クリックしてA3用紙（縦）サイズのPDFをダウンロード">
-                    <h1 class="text-3xl font-bold tracking-wider text-slate-800 group-hover:text-indigo-600 transition-colors border-b-2 border-transparent group-hover:border-indigo-400 px-2 py-1" id="doc_title">
+                    <h1 class="text-2xl md:text-3xl font-bold tracking-wider text-slate-800 group-hover:text-indigo-600 transition-colors border-b-2 border-transparent group-hover:border-indigo-400 px-2 py-1" id="doc_title">
                         R９年度 ふるさと学習（総合的な学習の時間） 全体計画（案）
                     </h1>
                     <span class="no-print inline-flex items-center text-xs font-medium text-indigo-600 bg-indigo-50 border border-indigo-200 px-2.5 py-1 rounded-full shadow-xs group-hover:bg-indigo-600 group-hover:text-white transition-all">
@@ -165,16 +165,16 @@
             <!-- 上段：3カラム構成 (中央をやや広く、左右を均等配分: 1fr : 1.35fr : 1fr) -->
             <div class="relative mb-3">
                 <!-- 3ブロック連結用の太いスカイブルー帯（上段・下段） -->
-                <div class="block absolute left-16 right-16 top-[56px] -translate-y-1/2 h-7 bg-[#9dc4ea] z-0 pointer-events-none rounded-xs"></div>
-                <div class="block absolute left-16 right-16 bottom-[92px] translate-y-1/2 h-7 bg-[#9dc4ea] z-0 pointer-events-none rounded-xs"></div>
+                <div class="hidden md:block absolute left-16 right-16 top-[56px] -translate-y-1/2 h-7 bg-[#9dc4ea] z-0 pointer-events-none rounded-xs"></div>
+                <div class="hidden md:block absolute left-16 right-16 bottom-[92px] translate-y-1/2 h-7 bg-[#9dc4ea] z-0 pointer-events-none rounded-xs"></div>
 
-                <div class="relative z-10 grid grid-cols-[1fr_1.35fr_1fr] gap-5">
-                    
+                <div class="relative z-10 grid grid-cols-1 md:grid-cols-[1fr_1.35fr_1fr] gap-5">
+
                     <!-- 左列：根拠法令 / 各種連携・発信 -->
                     <div class="flex flex-col gap-3">
                         <!-- 関連法規 -->
                         <div class="border border-slate-400 bg-white rounded-lg overflow-hidden shadow-sm flex flex-col min-h-[96px]">
-                            <div class="bg-slate-100 border-b border-slate-400 px-3 py-1.5 text-center font-bold text-sm text-slate-800 flex items-center justify-center">
+                            <div class="bg-slate-100 border-b border-slate-400 px-3 py-1.5 text-center font-bold text-xs md:text-sm text-slate-800 flex items-center justify-center">
                                 <div contenteditable="true" data-key="title_legal_basis">関連法規</div>
                             </div>
                             <div class="flex-1 flex items-center justify-center p-2">
@@ -219,24 +219,24 @@
                     <div class="flex flex-col">
                         <!-- 学校教育目標 -->
                         <div class="border border-slate-400 bg-white rounded-lg overflow-hidden shadow-sm flex flex-col min-h-[96px]">
-                            <div class="bg-slate-100 border-b border-slate-400 px-3 py-1.5 text-center font-bold text-sm text-slate-800 flex items-center justify-center">
+                            <div class="bg-slate-100 border-b border-slate-400 px-3 py-1.5 text-center font-bold text-xs md:text-sm text-slate-800 flex items-center justify-center">
                                 学校教育目標
                             </div>
                             <div class="flex-1 flex items-center justify-center p-3">
-                                <div contenteditable="true" data-key="plan_school_goal" class="text-center text-base font-bold text-slate-800 leading-relaxed whitespace-pre-wrap w-full">ふるさとを愛し、自らの未来を主体的に切り拓く児童生徒の育成</div>
+                                <div contenteditable="true" data-key="plan_school_goal" class="text-center text-sm md:text-base font-bold text-slate-800 leading-relaxed whitespace-pre-wrap w-full">ふるさとを愛し、自らの未来を主体的に切り拓く児童生徒の育成</div>
                             </div>
                         </div>
 
                         <!-- 矢印 (教育目標 -> 児童像) -->
                         <div class="flex justify-center my-1.5">
-                            <svg class="w-28 h-7 fill-[#9dc4ea]" viewBox="0 0 100 28">
+                            <svg class="w-24 md:w-28 h-6 md:h-7 fill-[#9dc4ea]" viewBox="0 0 100 28">
                                 <path d="M 22 0 L 78 0 L 78 14 L 100 14 L 50 28 L 0 14 L 22 14 Z" />
                             </svg>
                         </div>
 
                     <!-- 目指す児童・生徒像 -->
                     <div class="border border-slate-400 bg-white rounded-lg overflow-hidden shadow-sm flex-1 flex flex-col">
-                        <div class="bg-slate-100 border-b border-slate-400 px-3 py-1.5 text-center font-bold text-sm text-slate-800 flex items-center justify-center">
+                        <div class="bg-slate-100 border-b border-slate-400 px-3 py-1.5 text-center font-bold text-xs md:text-sm text-slate-800 flex items-center justify-center">
                             目指す児童・生徒像
                         </div>
                         <div class="flex-1 flex items-center justify-center p-3">
@@ -251,7 +251,7 @@
                 <div class="flex flex-col">
                     <div class="border border-slate-400 bg-white rounded-lg overflow-hidden shadow-sm flex flex-col h-full">
                         <!-- 児童・生徒の実態 -->
-                        <div class="bg-slate-100 border-b border-slate-400 px-3 py-1.5 text-center font-bold text-sm text-slate-800 flex items-center justify-center">
+                        <div class="bg-slate-100 border-b border-slate-400 px-3 py-1.5 text-center font-bold text-xs md:text-sm text-slate-800 flex items-center justify-center">
                             児童・生徒の実態
                         </div>
                         <div class="flex-1 flex items-center justify-center p-2.5 border-b border-slate-300">
@@ -266,7 +266,7 @@
                         </div>
 
                         <!-- 保護者・地域の願い -->
-                        <div class="bg-slate-100 border-b border-slate-400 px-3 py-1.5 text-center font-bold text-sm text-slate-800 flex items-center justify-center">
+                        <div class="bg-slate-100 border-b border-slate-400 px-3 py-1.5 text-center font-bold text-xs md:text-sm text-slate-800 flex items-center justify-center">
                             保護者・地域の願い
                         </div>
                         <div class="flex-1 flex items-center justify-center p-2.5">
@@ -282,17 +282,17 @@
 
             <!-- 下向き矢印 (上段 -> 総合学習目標) -->
             <div class="flex justify-center my-2">
-                <svg class="w-36 h-8 fill-[#9dc4ea]" viewBox="0 0 100 32">
+                <svg class="w-28 md:w-36 h-7 md:h-8 fill-[#9dc4ea]" viewBox="0 0 100 32">
                     <path d="M 20 0 L 80 0 L 80 16 L 100 16 L 50 32 L 0 16 L 20 16 Z" />
                 </svg>
             </div>
 
             <!-- 下段：総合的な学習の時間の目標（目指す資質・能力） -->
             <div class="border border-slate-400 bg-white rounded-lg overflow-hidden shadow-sm mb-4">
-                <div class="bg-slate-100 border-b border-slate-400 px-3 py-1.5 text-center font-bold text-sm text-slate-800">
+                <div class="bg-slate-100 border-b border-slate-400 px-3 py-1.5 text-center font-bold text-xs md:text-sm text-slate-800">
                     総合的な学習の時間の目標（目指す資質・能力）
                 </div>
-                <div contenteditable="true" data-key="plan_overall_goal" class="p-3.5 text-sm leading-relaxed text-slate-800 whitespace-pre-wrap">探究的な見方・考え方を働かせ、地域の人、もの、ことに関わる総合的な学習を通して、目的や根拠を明らかにしながら課題を解決し、自己の生き方を考えることができるようにするために、以下の資質・能力を育成する。
+                <div contenteditable="true" data-key="plan_overall_goal" class="p-3.5 text-xs md:text-sm leading-relaxed text-slate-800 whitespace-pre-wrap">探究的な見方・考え方を働かせ、地域の人、もの、ことに関わる総合的な学習を通して、目的や根拠を明らかにしながら課題を解決し、自己の生き方を考えることができるようにするために、以下の資質・能力を育成する。
 
 (1) 地域の人、もの、ことに関わる探究的な学習の過程において、課題の解決に必要な知識及び技能を身に付けるとともに、地域の特徴やよさに気付き、それらが人々の努力や工夫によって支えられていることに気付く。（知識・技能）
 
@@ -303,7 +303,7 @@
 
             <!-- Down Arrow 2 -->
             <div class="flex justify-center my-2">
-                <svg class="w-36 h-8 fill-[#9dc4ea]" viewBox="0 0 100 32">
+                <svg class="w-28 md:w-36 h-7 md:h-8 fill-[#9dc4ea]" viewBox="0 0 100 32">
                     <path d="M 20 0 L 80 0 L 80 16 L 100 16 L 50 32 L 0 16 L 20 16 Z" />
                 </svg>
             </div>
@@ -311,7 +311,7 @@
             <!-- 【ルーブリック評価基準表】 (1年〜9年) -->
             <div class="border border-slate-400 rounded-xl overflow-hidden mb-8 shadow-sm">
                 <div class="overflow-x-auto">
-                    <table class="w-full table-fixed text-sm border-collapse border border-slate-400 text-left">
+                    <table class="w-full table-fixed text-xs md:text-sm border-collapse border border-slate-400 text-left">
                         <colgroup>
                             <col class="w-10">
                             <col class="w-8">
@@ -337,16 +337,16 @@
                                 <th colspan="2" class="border border-slate-400 p-2 text-center font-bold text-xs text-slate-800 bg-slate-100 w-36">
                                     <div contenteditable="true" data-key="title_stage">探究の視点</div>
                                 </th>
-                                <th colspan="2" class="border border-slate-400 p-2 text-center font-bold text-sm text-slate-800 bg-slate-100 w-1/4">
+                                <th colspan="2" class="border border-slate-400 p-2 text-center font-bold text-xs md:text-sm text-slate-800 bg-slate-100 w-1/4">
                                     <div contenteditable="true" data-key="stage_in">1~2年</div>
                                 </th>
-                                <th colspan="2" class="border border-slate-400 p-2 text-center font-bold text-sm text-slate-800 bg-slate-100 w-1/4">
+                                <th colspan="2" class="border border-slate-400 p-2 text-center font-bold text-xs md:text-sm text-slate-800 bg-slate-100 w-1/4">
                                     <div contenteditable="true" data-key="stage_about">3~4年</div>
                                 </th>
-                                <th colspan="2" class="border border-slate-400 p-2 text-center font-bold text-sm text-slate-800 bg-slate-100 w-1/4">
+                                <th colspan="2" class="border border-slate-400 p-2 text-center font-bold text-xs md:text-sm text-slate-800 bg-slate-100 w-1/4">
                                     <div contenteditable="true" data-key="stage_pre_for">5~6年</div>
                                 </th>
-                                <th colspan="3" class="border border-slate-400 p-2 text-center font-bold text-sm text-slate-800 bg-slate-100 w-1/4">
+                                <th colspan="3" class="border border-slate-400 p-2 text-center font-bold text-xs md:text-sm text-slate-800 bg-slate-100 w-1/4">
                                     <div contenteditable="true" data-key="stage_for">7~9年</div>
                                 </th>
                             </tr>
@@ -364,13 +364,13 @@
                                 <th class="border border-slate-400 p-2 text-center font-bold text-xs text-slate-800 bg-slate-100 w-[8.334%]">９年</th>
                             </tr>
                         </thead>
-                        
+
                         <!-- 知識及び技能 (上段) -->
                         <tbody>
                             <tr>
                                 <!-- 縦書きタイトルの列 -->
                                 <td rowspan="8" class="border border-slate-400 bg-white text-center font-bold px-2 py-4 w-10 text-slate-700 select-none">
-                                    <div class="vertical-text mx-auto leading-relaxed text-sm">
+                                    <div class="vertical-text mx-auto leading-relaxed text-xs md:text-sm">
                                         探究課題の解決を通じて育成を目指す具体的な資質・能力
                                     </div>
                                 </td>
@@ -394,7 +394,7 @@
                                     <div contenteditable="true" data-key="k_7_9">天川村の地域課題や職場体験活動等の探究において、小学校での学びや各教科等の知識・技能を総合的に活用して多角的に考察・検証する技能を深めるとともに、ふるさとの持続可能な未来への参画や自己の将来の生き方・キャリア形成に果たす探究の意義を深く理解する。</div>
                                 </td>
                             </tr>
-                            
+
                             <!-- 大項目: 思考力・判断力・表現力等 (4行分) -->
                             <tr>
                                 <td rowspan="4" class="border border-slate-400 bg-white font-bold text-center p-2 text-slate-800 w-8">
@@ -533,14 +533,14 @@
             </div>
 
             <!-- 【下部】指導・評価の全体構想ブロック -->
-            <div class="grid grid-cols-4 gap-4">
-                
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+
                 <!-- 学習活動 -->
                 <div class="border border-slate-400 bg-white rounded-lg p-3.5 shadow-sm hover:shadow transition">
-                    <h3 class="font-bold border-b border-slate-300 pb-1.5 mb-2 text-slate-800 text-base">
+                    <h3 class="font-bold border-b border-slate-300 pb-1.5 mb-2 text-slate-800 text-sm md:text-base">
                         <span contenteditable="true" data-key="box1_title">【学習活動】</span>
                     </h3>
-                    <div contenteditable="true" data-key="box1_content" class="text-sm leading-relaxed space-y-1 text-slate-700 whitespace-pre-wrap">・地域の実態、児童の実態を踏まえ、探究課題を設定する。
+                    <div contenteditable="true" data-key="box1_content" class="text-xs md:text-sm leading-relaxed space-y-1 text-slate-700 whitespace-pre-wrap">・地域の実態、児童の実態を踏まえ、探究課題を設定する。
 ・地域の人、もの、ことを生かした学習活動を行う。
 ・学習成果を表現する場を設定する。
 ・年間1テーマでの取組を基本とする。</div>
@@ -548,20 +548,20 @@
 
                 <!-- 指導体制 -->
                 <div class="border border-slate-400 bg-white rounded-lg p-3.5 shadow-sm hover:shadow transition">
-                    <h3 class="font-bold border-b border-slate-300 pb-1.5 mb-2 text-slate-800 text-base">
+                    <h3 class="font-bold border-b border-slate-300 pb-1.5 mb-2 text-slate-800 text-sm md:text-base">
                         <span contenteditable="true" data-key="box2_title">【指導体制】</span>
                     </h3>
-                    <div contenteditable="true" data-key="box2_content" class="text-sm leading-relaxed space-y-1 text-slate-700 whitespace-pre-wrap">・帯活動を通して、全校指導体制を組織する。
+                    <div contenteditable="true" data-key="box2_content" class="text-xs md:text-sm leading-relaxed space-y-1 text-slate-700 whitespace-pre-wrap">・帯活動を通して、全校指導体制を組織する。
 ・地域の教育資源をデータ化するとともに、日常的な関わりを行う。
 ・ふるさと人材バンクを活用する。</div>
                 </div>
 
                 <!-- 指導方法 -->
                 <div class="border border-slate-400 bg-white rounded-lg p-3.5 shadow-sm hover:shadow transition">
-                    <h3 class="font-bold border-b border-slate-300 pb-1.5 mb-2 text-slate-800 text-base">
+                    <h3 class="font-bold border-b border-slate-300 pb-1.5 mb-2 text-slate-800 text-sm md:text-base">
                         <span contenteditable="true" data-key="box3_title">【指導方法】</span>
                     </h3>
-                    <div contenteditable="true" data-key="box3_content" class="text-sm leading-relaxed space-y-1 text-slate-700 whitespace-pre-wrap">・児童・生徒の課題意識を連続、発展させる支援と工夫を行う。
+                    <div contenteditable="true" data-key="box3_content" class="text-xs md:text-sm leading-relaxed space-y-1 text-slate-700 whitespace-pre-wrap">・児童・生徒の課題意識を連続、発展させる支援と工夫を行う。
 ・各教科等との関連を重視した指導を行う。
 ・言語により整理分析したり、まとめ表現したりする学習を重視する。
 ・協働的な学習を充実させるため、思考ツールを積極的に活用する。</div>
@@ -569,30 +569,30 @@
 
                 <!-- 学習評価 -->
                 <div class="border border-slate-400 bg-white rounded-lg p-3.5 shadow-sm hover:shadow transition">
-                    <h3 class="font-bold border-b border-slate-300 pb-1.5 mb-2 text-slate-800 text-base">
+                    <h3 class="font-bold border-b border-slate-300 pb-1.5 mb-2 text-slate-800 text-sm md:text-base">
                         <span contenteditable="true" data-key="box4_title">【学習評価】</span>
                     </h3>
-                    <div contenteditable="true" data-key="box4_content" class="text-sm leading-relaxed space-y-1 text-slate-700 whitespace-pre-wrap">・指導と評価の一体化を充実する。
+                    <div contenteditable="true" data-key="box4_content" class="text-xs md:text-sm leading-relaxed space-y-1 text-slate-700 whitespace-pre-wrap">・指導と評価の一体化を充実する。
 ・観点別学習状況を把握するための評価規準を設定する。
 ・ポートフォリオを活用した評価の充実を図る。</div>
                 </div>
 
                 <!-- 各教科 (下段 1) -->
-                <div class="border border-slate-400 bg-white rounded-lg p-3.5 shadow-sm hover:shadow transition col-span-2">
-                    <h3 class="font-bold border-b border-slate-300 pb-1.5 mb-2 text-slate-800 text-base">
+                <div class="border border-slate-400 bg-white rounded-lg p-3.5 shadow-sm hover:shadow transition lg:col-span-2">
+                    <h3 class="font-bold border-b border-slate-300 pb-1.5 mb-2 text-slate-800 text-sm md:text-base">
                         <span contenteditable="true" data-key="box5_title">【各教科】</span>
                     </h3>
-                    <div contenteditable="true" data-key="box5_content" class="text-sm leading-relaxed space-y-1 text-slate-700 whitespace-pre-wrap">・教科等横断的な学習の推進
+                    <div contenteditable="true" data-key="box5_content" class="text-xs md:text-sm leading-relaxed space-y-1 text-slate-700 whitespace-pre-wrap">・教科等横断的な学習の推進
 ・各教科等で学習した内容や方法の活用
 ・学級担任と専科教員との連携</div>
                 </div>
 
                 <!-- 地域との連携 (下段 2) -->
-                <div class="border border-slate-400 bg-white rounded-lg p-3.5 shadow-sm hover:shadow transition col-span-2">
-                    <h3 class="font-bold border-b border-slate-300 pb-1.5 mb-2 text-slate-800 text-base">
+                <div class="border border-slate-400 bg-white rounded-lg p-3.5 shadow-sm hover:shadow transition lg:col-span-2">
+                    <h3 class="font-bold border-b border-slate-300 pb-1.5 mb-2 text-slate-800 text-sm md:text-base">
                         <span contenteditable="true" data-key="box6_title">【地域との連携】</span>
                     </h3>
-                    <div contenteditable="true" data-key="box6_content" class="text-sm leading-relaxed space-y-1 text-slate-700 whitespace-pre-wrap">・社会福祉協議会
+                    <div contenteditable="true" data-key="box6_content" class="text-xs md:text-sm leading-relaxed space-y-1 text-slate-700 whitespace-pre-wrap">・社会福祉協議会
 ・地域の行事
 ・村役場
 ・村の交流施設 など</div>
